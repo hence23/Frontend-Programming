@@ -1,10 +1,4 @@
 ------------------------------------------------------
-* Template Name: Mona - Model Agency HTML Template
-* Template Author: Colorlib
-* Template Author URI: https://colorlib.com
-* Version: 1.0.0
-* Last Update: Dec 21, 2018
------------------------------------------------------
 # Hans Resume Website
 * 透過輪流播放相片，也可以使用Next Photo操作到下一張，並設計More Detail按鈕到導航到下面內容，
 * 透過模板的主要架構，將導航列的設計改成書籤跳轉式，讓網頁形成一頁式瀏覽 ex. Activities/ Work Experience跳轉至下面章節
@@ -16,4 +10,11 @@
 * 設計增設一列Row，調整字體及Margin-buttom長度添加美感
 * Contact Us區塊新增自己的相片，修改文字的內容及各區塊大小
 * 網頁的Buttom保留copyright，將連結編輯到自己的網站(ex. Facebook, IG...)和利用預設icon做個小設計
+-----------------------------------------------------
+# Reference
+* Template Name: Mona - Model Agency HTML Template
+* Template Author: Colorlib
+* Template Author URI: https://colorlib.com
+* Version: 1.0.0
+* Last Update: Dec 21, 2018
 
