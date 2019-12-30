@@ -1,0 +1,55 @@
+<header class="wrap">
+    <h1>貪食蛇</h1>
+    <p class="score">分數: <span id="score_value">0</span></p>
+</header>
+
+<link rel="stylesheet" href="snake.css" />
+<canvas class="wrap" id="snake" width="450" height="450" tabindex="1"></canvas>
+
+<!-- Game Over Screen -->
+<div id="gameover">
+    <h2>你掛了</h2>
+    <p>按下 <span style="background-color: #FFFFFF; color: #000000">空白鍵</span> 來開始~~</p>
+    <a id="newgame_gameover">重新開始</a>
+    <a id="setting_gameover">遊戲設定</a>
+</div>
+
+<!-- Setting screen -->
+<div id="setting">
+    <h2>遊戲設定</h2>
+
+    <a id="newgame_setting">遊戲開始</a>
+
+    <p>蛇蛇速度:
+        <input id="speed1" type="radio" name="speed" value="120" checked/>
+        <label for="speed1">慢慢</label>
+        <input id="speed2" type="radio" name="speed" value="75" />
+        <label for="speed2">普普</label>
+        <input id="speed3" type="radio" name="speed" value="35" />
+        <label for="speed3">快速</label>
+    </p>
+
+    <p>邊界:
+        <input id="wallon" type="radio" name="wall" value="1" checked/>
+        <label for="wallon">開啟</label>
+        <input id="walloff" type="radio" name="wall" value="0" />
+        <label for="walloff">關閉</label>
+    </p>
+
+</div>
+
+<!-- Main Menu Screen -->
+<div id="menu">
+    <h2>貪吃蛇蛇</h2>
+
+    <a id="newgame_menu">遊戲開始</a>
+    <a id="setting_menu">遊戲設定</a>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- 引用自己寫的 js -->
+<script src="snake.js"></script>
