@@ -15,8 +15,6 @@
     //蛇蛇速度
     var snake_speed;
 
-
-
     // 食物初始座標
     var food = {
         x: 0,
