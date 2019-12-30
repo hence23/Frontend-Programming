@@ -41,7 +41,7 @@ canvas:focus {
 }
 
 
-/* Top Styles */
+/* Header樣式 */
 
 h1 {
     display: inline-block;
@@ -63,7 +63,7 @@ h1 {
 }
 
 
-/* All screens style */
+/* 其他block樣式 */
 
 #gameover a,
 #setting a,
@@ -85,7 +85,7 @@ h1 {
 }
 
 
-/* Menu Screen Style */
+/* 主畫面樣式 */
 
 #menu {
     display: block;
@@ -129,7 +129,7 @@ h1 {
 }
 
 
-/* Game Over Screen Style */
+/* 死亡畫面樣式 */
 
 #gameover {
     display: none;
@@ -157,7 +157,7 @@ h1 {
 }
 
 
-/* Settings Screen Style */
+/* 遊戲設定樣式 */
 
 #setting {
     display: none;
