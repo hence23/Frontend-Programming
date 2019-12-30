@@ -46,7 +46,7 @@ canvas:focus {
 h1 {
     display: inline-block;
     width: 100px;
-    font-size: 32px;
+    font-size: 25px;
     color: #FFFFFF;
 }
 
@@ -134,7 +134,7 @@ h1 {
 #gameover {
     display: none;
     width: 340px;
-    padding-top: 95px;
+    padding-top: 10px;
     padding-bottom: 95px;
     margin-left: auto;
     margin-right: auto;
@@ -145,7 +145,15 @@ h1 {
 
 #gameover p {
     margin-top: 25px;
-    font-size: 25px;
+    font-size: 35px;
+}
+
+#gameover img {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    height: 350px;
+    width: 350px;
 }
 
 
@@ -159,7 +167,7 @@ h1 {
     padding-top: 85px;
     padding-bottom: 85px;
     font-size: 25px;
-    color: rgb(14, 152, 233);
+    color: rgb(162, 238, 232);
     text-align: center;
 }
 
