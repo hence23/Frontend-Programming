@@ -105,6 +105,7 @@
         //前進方向
         snake_dir = snake_next_dir;
 
+        //利用switch()來用值來執行下面狀況
         // 0 - 上, 1 - 右 2 - 下 3 - 左
         switch (snake_dir) {
             case 0:
@@ -242,7 +243,7 @@
         }
     }
 
-    //透過Fuction來控制各個不同CSS的呈現
+    //透過Switch來控制各個Case不同CSS的呈現
     // 0 遊戲畫面
     // 1 主Menu
     // 2 遊戲設定
@@ -332,6 +333,8 @@
 
         // 遊戲設定裡選擇"速度"
         for (var i = 0; i < speed_setting.length; i++) {
+            //Jquery???
+            $(speed_setting[i].click())
             speed_setting[i].addEventListener("click", function() {
                 for (var i = 0; i < speed_setting.length; i++) {
                     if (speed_setting[i].checked) {
@@ -343,6 +346,7 @@
 
         // 遊戲設定裡選擇"邊界"
         for (var i = 0; i < wall_setting.length; i++) {
+            //Jquery???
             wall_setting[i].addEventListener("click", function() {
                 for (var i = 0; i < wall_setting.length; i++) {
                     if (wall_setting[i].checked) {
