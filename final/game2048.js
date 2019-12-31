@@ -19,6 +19,7 @@ var gameObj = {
 
     },
 
+    //清空陣列
     empty: function() {
         var emptyList = [];
         for (var row = 0; row < 4; row++) {
@@ -32,8 +33,6 @@ var gameObj = {
     },
     newBox: function() {
         var _this = this;
-
-
         var box = function(obj) {
             var num = Math.random() > 0.9 ? 4 : 2;
             this.value = num;
@@ -56,6 +55,8 @@ var gameObj = {
             return true;
         }
     },
+
+    //2048陣列合併邏輯
     isEnd: function() {
         var emptyList = this.empty();
         if (!emptyList.length) {
@@ -78,13 +79,14 @@ var gameObj = {
         }
         return false;
     },
+
+    //當上下左右無法合併時，就是遊戲結束
     gameOver: function() {
         alert('GAVE OVER!');
     },
     moveTo: function(obj1, obj2) {
         obj2.boxObj = obj1.boxObj;
         obj2.boxObj.domObj.className = 'row' + obj2.position[0] + ' ' + 'cell' + obj2.position[1] + ' ' + 'num' + obj2.boxObj.value;
-        //            obj1.boxObj.domObj.parentNode.removeChild(obj1.boxObj.domObj);
         obj1.boxObj = null;
     },
     addTo: function(obj1, obj2) {
@@ -100,8 +102,6 @@ var gameObj = {
         scoreBar.innerText = this.points.score;
         scoreBar.textContent = this.points.score;
         return obj2.boxObj.value;
-
-
     },
     clear: function(x, y) {
         var can = 0;
@@ -147,6 +147,7 @@ var gameObj = {
             for (var j = 0; j < 3; j++) {
                 var objInThisWay = null;
                 var objInThisWay2 = null;
+                //利用switch做不同狀況時調整
                 switch ("" + x + y) {
                     case '00':
                         {
@@ -177,10 +178,9 @@ var gameObj = {
                 if (objInThisWay2.boxObj && objInThisWay.boxObj.value == objInThisWay2.boxObj.value) {
                     add += this.addTo(objInThisWay2, objInThisWay);
                     this.clear(x, y);
-                    //                    j++;
+                    //j++;
                     can = 1;
                 }
-                //                console.log(this.stage);
             }
         }
         if (add) {
@@ -272,6 +272,7 @@ window.onload = function() {
         controller.end(x, y);
     }
 
+    //用keycode來操作上下左右的function
     function keyUp(e) {
         var currKey = 0,
             e = e || event;
@@ -291,8 +292,6 @@ window.onload = function() {
                 gameObj.move(1, 1);
                 break;
         }
-        //        alert("key code: " + currKey + " Character: " + keyName);
     }
     document.onkeyup = keyUp;
-    //    disableSelection(document.body);
 }

@@ -127,6 +127,9 @@ body {
     -webkit-transition: all .2s ease;
 }
 
+
+/* 各row的轉場效果 */
+
 .row1 {
     top: 120px;
     transition: all .2s ease;
@@ -210,6 +213,9 @@ div {
     -khtml-user-select: none;
     user-select: none;
 }
+
+
+/* 各個數字顏色2^n */
 
 .num2 {
     background: #fff;
