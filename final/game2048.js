@@ -1,11 +1,15 @@
 var gameObj = {
     points: {
+        //分數 歷史分數
         score: 0,
         history: [],
         status: 1
     },
+
+    //空陣列
     stage: [],
-    // 4x4 Matrix
+
+    // 4x4矩陣
     intiStage: function() {
         for (var cell = 0; cell < 4; cell++) {
             this.stage[cell] = [];
@@ -16,7 +20,6 @@ var gameObj = {
                 };
             }
         }
-
     },
 
     //清空陣列
@@ -31,9 +34,11 @@ var gameObj = {
         }
         return emptyList;
     },
+
     newBox: function() {
         var _this = this;
         var box = function(obj) {
+            //初始先產生2or4
             var num = Math.random() > 0.9 ? 4 : 2;
             this.value = num;
             this.parent = obj;
