@@ -1,56 +1,30 @@
-<header class="wrap">
-    <!-- Title -->
-    <title>期末專案-貪吃蛇</title>
+<html>
 
-    <!-- Head -->
-    <h1>貪吃蛇</h1>
-    <p class="score">分數: <span id="score_value">0</span></p>
-</header>
+<head>
+    <title>期末專案-2048</title>
+    <link rel="stylesheet" href="game2048.css" />
+    <script type="text/javascript" src="game2048.js"></script>
+</head>
 
 <body>
-    <link rel="stylesheet" href="snake.css" />
-    <canvas class="wrap" id="snake" width="450" height="450" tabindex="1"></canvas>
 
-    <!-- 死亡畫面 -->
-    <div id="gameover">
-        <img src="img/IMG_3609.JPG"></img>
-        <p>按下 <span style="background-color: #FFFFFF; color: #000000">空白鍵</span> 來開始~~</p>
-        <a id="newgame_gameover">重新開始</a>
-        <a id="setting_gameover">遊戲設定</a>
-    </div>
-
-    <!-- 遊戲設定 -->
-    <div id="setting">
-        <h2>遊戲設定</h2>
-
-        <a id="newgame_setting">遊戲開始</a>
-
-        <p>蛇蛇速度:
-            <input id="speed1" type="radio" name="speed" value="120" checked/>
-            <label for="speed1">慢慢</label>
-            <input id="speed2" type="radio" name="speed" value="75" />
-            <label for="speed2">普普</label>
-            <input id="speed3" type="radio" name="speed" value="35" />
-            <label for="speed3">快快</label>
-        </p>
-
-        <p>邊界:
-            <input id="wallon" type="radio" name="wall" value="1" checked/>
-            <label for="wallon">開啟</label>
-            <input id="walloff" type="radio" name="wall" value="0" />
-            <label for="walloff">關閉</label>
-        </p>
-
-    </div>
-
-    <!-- 主畫面 -->
-    <div id="menu">
-        <h2>Greedy Snake</h2>
-
-        <a id="newgame_menu">遊戲開始</a>
-        <a id="setting_menu">遊戲設定</a>
+    <p> join the number to get 2048 tile!</p>
+    <div class="cover"></div>
+    <div class="container">
+        <div class="logo">2048</div>
+        <div class="scoreBar">
+            <label style="position: relative; top:-13px;">score:</label>
+            <label id="score"> 0</label>
+            <div id="addScore"></div>
+        </div>
+        <div id="stage"></div>
+        <!--<div id="gameOver hide">-->
+        <!--<div class="overText">GameOver!</div>-->
+        <!--</div>-->
     </div>
 </body>
+
+</html>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
