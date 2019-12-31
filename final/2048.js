@@ -86,7 +86,7 @@ var gameObj = {
         return false;
     },
 
-    //當上下左右無法合併時，就是遊戲結束
+    //Gameover的時候彈出視窗
     gameOver: function() {
         alert('GAVE OVER!');
     },
@@ -242,42 +242,9 @@ var controller = function() {
     }
 }();
 
-function disableSelection(target) {
-    if (typeof target.onselectstart != "undefined") //IE route
-        target.onselectstart = function() { return false }
-    else if (typeof target.style.MozUserSelect != "undefined") //Firefox route
-        target.style.MozUserSelect = "none"
-    else //All other route (ie: Opera)
-        target.onmousedown = function() { return false }
-    target.style.cursor = "default"
-}
 window.onload = function() {
     gameObj.intiStage();
     gameObj.newBox();
-    //    gameObj.newBox();
-    var biglist = document.getElementById('biglist');
-    document.onmousedown = function(e) {
-        var event = e || window.event;
-        var obj = event.target || event.srcElement;
-        var x = event.clientX;
-        var y = event.clientY;
-        controller.start(x, y);
-    }
-    document.onmousemove = function(e) {
-        var event = e || window.event;
-        var obj = event.target || event.srcElement;
-        var x = event.clientX;
-        var y = event.clientY;
-        controller.move(x, y);
-    }
-    document.onmouseup = function(e) {
-        var event = e || window.event;
-        var obj = event.target || event.srcElement;
-        var x = event.clientX;
-        var y = event.clientY;
-        controller.end(x, y);
-    }
-
     //用keycode來操作上下左右的function
     function keyUp(e) {
         var currKey = 0,
