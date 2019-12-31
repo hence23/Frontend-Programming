@@ -88,7 +88,7 @@ body {
     -webkit-transition: all .5s ease;
 }
 
-#stage {
+#biglist {
     background: #01bfae;
     cursor: pointer;
     -moz-user-select: none;

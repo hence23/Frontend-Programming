@@ -22,7 +22,7 @@ var gameObj = {
         }
     },
 
-    //清空陣列fuction
+    //清空陣列
     empty: function() {
         var emptyList = [];
         for (var row = 0; row < 4; row++) {
@@ -38,22 +38,21 @@ var gameObj = {
     newBox: function() {
         var _this = this;
         var box = function(obj) {
-                //初始先產生2or4
-                var num = Math.random() > 0.9 ? 4 : 2;
-                this.value = num;
-                this.parent = obj;
-                this.domObj = function() {
-                    var mainBox = document.createElement('span');
-                    mainBox.innerText = num;
-                    mainBox.textContent = num;
-                    mainBox.className = 'row' + obj.position[0] + ' ' + 'cell' + obj.position[1] + ' ' + 'num' + num;
-                    var root = document.getElementById('biglist');
-                    root.appendChild(mainBox);
-                    return mainBox;
-                }();
-                obj.boxObj = this;
-            }
-            //清空內容
+            //初始先產生2or4
+            var num = Math.random() > 0.9 ? 4 : 2;
+            this.value = num;
+            this.parent = obj;
+            this.domObj = function() {
+                var domBox = document.createElement('span');
+                domBox.innerText = num;
+                domBox.textContent = num;
+                domBox.className = 'row' + obj.position[0] + ' ' + 'cell' + obj.position[1] + ' ' + 'num' + num;
+                var root = document.getElementById('biglist');
+                root.appendChild(domBox);
+                return domBox;
+            }();
+            obj.boxObj = this;
+        }
         var emptyList = this.empty();
         if (emptyList.length) {
             var randomIndex = Math.floor(Math.random() * emptyList.length);
