@@ -73,7 +73,7 @@ var gameObj = {
                 for (var j = 0; j < 4; j++) {
                     // 每個元素
                     var allitem = this.biglist[i][j];
-                    //利用條件訂上下左右各值
+                    //利用條件判定上下左右的值
                     var itemleft = (j == 0) ? { boxObj: { value: 0 } } : this.biglist[i][j - 1];
                     var itemright = (j == 3) ? { boxObj: { value: 0 } } : this.biglist[i][j + 1];
                     var itemup = (i == 0) ? { boxObj: { value: 0 } } : this.biglist[i - 1][j];
