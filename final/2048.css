@@ -1,3 +1,7 @@
+.textcolor {
+    color: #ff9d00;
+}
+
 html {
     height: 100%;
     -khtml-user-select: none;
@@ -28,7 +32,6 @@ body {
     width: 40%;
     font-size: 70px;
     font-weight: bold;
-    color: #0e6de9;
     float: left;
     position: relative;
 }
