@@ -1,4 +1,4 @@
-var gameObj = {
+var game = {
     points: {
         //分數 歷史分數
         score: 0,
@@ -44,12 +44,11 @@ var gameObj = {
             this.parent = allitem;
             this.domObj = function() {
                 var mainBox = document.createElement('span');
-                // mainBox.innerText = num;
                 mainBox.textContent = num;
                 //設置class名稱
                 mainBox.className = 'row' + allitem.position[0] + ' ' + 'cell' + allitem.position[1] + ' ' + 'num' + num;
                 var root = document.getElementById('biglist');
-                //appendChild添增??????
+                //root 添增mainbox
                 root.appendChild(mainBox);
                 return mainBox;
             }();
@@ -66,7 +65,7 @@ var gameObj = {
     },
 
     //GameOver條件
-    isEnd: function() {
+    dead: function() {
         var emptyList = this.empty();
         if (!emptyList.length) {
             for (var i = 0; i < 4; i++) {
@@ -79,7 +78,7 @@ var gameObj = {
                     var itemup = (i == 0) ? { boxObj: { value: 0 } } : this.biglist[i - 1][j];
                     var itemdown = (i == 3) ? { boxObj: { value: 0 } } : this.biglist[i + 1][j];
                     //當每格上下左右有出現一或以上個值一樣，遊戲就可以繼續
-                    //當每格上下左右都不相等時，回傳true，Gameover
+                    //當每格上下左右都不相等時，回傳true-->Gameover
                     if (allitem.boxObj.value == itemleft.boxObj.value ||
                         allitem.boxObj.value == itemdown.boxObj.value ||
                         allitem.boxObj.value == itemright.boxObj.value ||
@@ -112,88 +111,89 @@ var gameObj = {
         obj2.boxObj.domObj.innerText = obj2.boxObj.value;
         obj2.boxObj.domObj.textContent = obj2.boxObj.value;
         this.points.score += obj2.boxObj.value; //分數增加為合併數字的值
-        var scoreBar = document.getElementById('score');
-        scoreBar.innerText = this.points.score; //分數顯示
-        scoreBar.textContent = this.points.score; //分數顯示
+        var scorebar = document.getElementById('score');
+        scorebar.innerText = this.points.score; //分數顯示
+        scorebar.textContent = this.points.score; //分數顯示
         return obj2.boxObj.value;
     },
+    //清空移動方向數字
     clear: function(x, y) {
         var can = 0;
         for (var i = 0; i < 4; i++) {
             var fst = null;
             var fstEmpty = null;
             for (var j = 0; j < 4; j++) {
-                var objInThisWay = null;
+                var itemOnthisway = null;
                 switch ("" + x + y) {
-                    case '00':
-                        objInThisWay = this.biglist[i][j];
+                    case '00': //向左
+                        itemOnthisway = this.biglist[i][j];
                         break;
-                    case '10':
-                        objInThisWay = this.biglist[j][i];
+                    case '10': //向上
+                        itemOnthisway = this.biglist[j][i];
                         break;
-                    case '11':
-                        objInThisWay = this.biglist[3 - j][i];
+                    case '11': //向下
+                        itemOnthisway = this.biglist[3 - j][i];
                         break;
-                    case '01':
-                        objInThisWay = this.biglist[i][3 - j];
+                    case '01': //向右
+                        itemOnthisway = this.biglist[i][3 - j];
                         break;
                 }
-                if (objInThisWay.boxObj != null) {
+                if (itemOnthisway.boxObj != null) {
                     if (fstEmpty) {
-                        this.moveTo(objInThisWay, fstEmpty)
+                        this.moveTo(itemOnthisway, fstEmpty)
                         fstEmpty = null;
                         j = 0;
                         can = 1;
                     }
                 } else if (!fstEmpty) {
-                    fstEmpty = objInThisWay;
+                    fstEmpty = itemOnthisway;
                 }
             }
         }
         return can;
     },
 
+    // 利用座標概念移動
     move: function(x, y) {
         var can = 0;
         can = this.clear(x, y) ? 1 : 0;
         var add = 0;
         for (var i = 0; i < 4; i++) {
             for (var j = 0; j < 3; j++) {
-                var objInThisWay = null;
-                var objInThisWay2 = null;
+                var itemOnthisway = null;
+                var itemOnthisway2 = null;
                 //利用switch做不同狀況時調整
                 switch ("" + x + y) {
                     case '00': //向左
                         {
-                            objInThisWay = this.biglist[i][j];
-                            objInThisWay2 = this.biglist[i][j + 1];
+                            itemOnthisway = this.biglist[i][j];
+                            itemOnthisway2 = this.biglist[i][j + 1];
                             break;
                         }
                     case '10': //向上
                         {
-                            objInThisWay = this.biglist[j][i];
-                            objInThisWay2 = this.biglist[j + 1][i];
+                            itemOnthisway = this.biglist[j][i];
+                            itemOnthisway2 = this.biglist[j + 1][i];
                             break;
                         }
 
                     case '11': // 向下
                         {
-                            objInThisWay = this.biglist[3 - j][i];
-                            objInThisWay2 = this.biglist[2 - j][i];
+                            itemOnthisway = this.biglist[3 - j][i];
+                            itemOnthisway2 = this.biglist[2 - j][i];
                             break;
                         }
                     case '01': //向右
                         {
-                            objInThisWay = this.biglist[i][3 - j];
-                            objInThisWay2 = this.biglist[i][2 - j];
+                            itemOnthisway = this.biglist[i][3 - j];
+                            itemOnthisway2 = this.biglist[i][2 - j];
                             break;
                         }
                 }
                 //如果兩值相等，呼叫addto和clear
-                if (objInThisWay2.boxObj && objInThisWay.boxObj.value == objInThisWay2.boxObj.value) {
-                    add += this.addTo(objInThisWay2, objInThisWay);
+                if (itemOnthisway2.boxObj && itemOnthisway.boxObj.value == itemOnthisway2.boxObj.value) {
+                    add += this.addTo(itemOnthisway2, itemOnthisway);
                     this.clear(x, y);
-                    //j++;
                     can = 1;
                 }
             }
@@ -210,7 +210,7 @@ var gameObj = {
         if (can) {
             this.newBox(); //新遊戲
         }
-        if (this.isEnd()) {
+        if (this.dead()) {
             this.gameOver(); //Gameover時，彈幕視窗顯示
         }
     },
@@ -231,16 +231,16 @@ var controller = function() {
     };
     this.move = function(x, y) {
         if (x - startX > 100 && ready) {
-            gameObj.move(0, 1);
+            game.move(0, 1);
             ready = 0;
         } else if (startX - x > 100 && ready) {
-            gameObj.move(0, 0);
+            game.move(0, 0);
             ready = 0;
         } else if (startY - y > 100 && ready) {
-            gameObj.move(1, 0);
+            game.move(1, 0);
             ready = 0;
         } else if (y - startY > 100 && ready) {
-            gameObj.move(1, 1);
+            game.move(1, 1);
             ready = 0;
         }
     }
@@ -256,8 +256,8 @@ var controller = function() {
 
 //在頁面加載完成後立刻生成
 window.onload = function() {
-    gameObj.intiStage();
-    gameObj.newBox();
+    game.intiStage();
+    game.newBox();
     //用keycode來操作上下左右的function
     function keyUp(e) {
         var currKey = 0,
@@ -267,16 +267,16 @@ window.onload = function() {
         var keyName = String.fromCharCode(currKey);
         switch (currKey) {
             case 37: //左
-                gameObj.move(0, 0);
+                game.move(0, 0);
                 break;
             case 38: //上
-                gameObj.move(1, 0);
+                game.move(1, 0);
                 break;
             case 39: //右
-                gameObj.move(0, 1);
+                game.move(0, 1);
                 break;
             case 40: //下
-                gameObj.move(1, 1);
+                game.move(1, 1);
                 break;
         }
     }

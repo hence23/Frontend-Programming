@@ -1,6 +1,5 @@
 html {
     height: 100%;
-    -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
 }
@@ -29,7 +28,7 @@ body {
     width: 40%;
     font-size: 70px;
     font-weight: bold;
-    color: #d13100;
+    color: #0e6de9;
     float: left;
     position: relative;
 }
@@ -70,12 +69,13 @@ body {
     right: 0;
 }
 
+
+/* 分數 */
+
 #addScore.show {
     opacity: .8;
     transition: all .5s ease;
     -ms-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
     -webkit-transition: all .5s ease;
 }
 
@@ -83,15 +83,15 @@ body {
     opacity: 0;
     transition: all .5s ease;
     -ms-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
     -webkit-transition: all .5s ease;
 }
 
+
+/* 遊戲介面 */
+
 #biglist {
-    background: #01bfae;
+    background: #88f0e7;
     cursor: pointer;
-    -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
     position: absolute;
@@ -118,24 +118,23 @@ body {
     cursor: pointer;
 }
 
+
+/* 各row的轉場效果 */
+
+
+/* 含各個瀏覽器 */
+
 .row0 {
     top: 10px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
-
-
-/* 各row的轉場效果 */
 
 .row1 {
     top: 120px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -143,8 +142,6 @@ body {
     top: 230px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -152,8 +149,6 @@ body {
     top: 340px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -161,8 +156,6 @@ body {
     left: 10px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -170,8 +163,6 @@ body {
     left: 120px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -179,8 +170,6 @@ body {
     left: 230px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -188,8 +177,6 @@ body {
     left: 340px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -203,13 +190,11 @@ span {
     cursor: pointer;
     background: #fff;
     font-size: 43px;
-    -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
 }
 
 div {
-    -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
 }
@@ -227,8 +212,6 @@ div {
     -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
     animation: myfirst .5s;
-    -moz-animation: myfirst .5s;
-    /* Firefox */
     -webkit-animation: myfirst .5s;
     /* Safari or Chrome or opera */
 }
@@ -243,8 +226,6 @@ div {
     -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
     animation: myfirst .5s;
-    -moz-animation: myfirst .5s;
-    /* Firefox */
     -webkit-animation: myfirst .5s;
     /* Safari or Chrome */
 }
@@ -255,32 +236,26 @@ div {
     font-size: 100px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
     animation: myfirst .5s;
 }
 
 .num16 {
-    background: #F5EC00;
+    background: rgb(64, 214, 114);
     color: #fff;
     font-size: 80px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
     animation: myfirst .5s;
 }
 
 .num32 {
-    background: #fcc20e;
+    background: #3670ec;
     color: #fdfdfd;
     font-size: 80px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -290,19 +265,15 @@ div {
     font-size: 80px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
 .num128 {
-    background: #222;
-    color: #f94e2f;
+    background: rgb(30, 231, 120);
+    color: #caf083;
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -312,8 +283,6 @@ div {
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -323,8 +292,6 @@ div {
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -334,8 +301,6 @@ div {
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -345,8 +310,6 @@ div {
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -356,8 +319,6 @@ div {
     font-size: 52px;
     transition: all .2s ease;
     -ms-transition: all .2s ease;
-    -moz-transition: all .2s ease;
-    -o-transition: all .2s ease;
     -webkit-transition: all .2s ease;
 }
 
@@ -376,28 +337,7 @@ div {
     }
 }
 
-@-moz-keyframes myfirst
-/* Firefox */
-
-{
-    0% {
-        opacity: 0;
-        -moz-transform: scale(0)
-    }
-    50% {
-        opacity: .5;
-        -moz-transform: scale(1.5)
-    }
-    100% {
-        opacity: 1;
-        -moz-transform: scale(1)
-    }
-}
-
-@-webkit-keyframes myfirst
-/* Safari or Chrome */
-
-{
+@-webkit-keyframes myfirst {
     0% {
         opacity: 0;
         -webkit-transform: scale(0)
